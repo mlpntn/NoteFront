@@ -1,0 +1,93 @@
+@import '../../../theme/breakpoints.scss';
+
+.popup-confirm {
+    height: 100%;
+    position: relative;
+
+    .popup-confirm-wrapper {
+        position: absolute;
+        width: calc(100% - 40px);
+        background-color: var(--white); 
+        display: flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .popup-confirm-icon-container {
+            padding-bottom: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            svg {
+                width: auto;
+                height: 240px;
+                @include bp(sm) {
+                  width: auto;
+                  height: 80px;
+                }
+            }
+        }
+
+        .popup-confirm-content {
+            flex: 1;
+            margin-left: 225px;
+            @include bp(sm) {
+                margin-left: 0;
+            }
+            .popup-confirm-header {
+                text-align: right;
+                padding: 10px;
+
+                button {
+                    background: none;
+                    padding: 0;
+                }
+            }
+        
+            .popup-confirm-message {
+                padding: 50px;
+                padding-top: 75px;
+                text-align: center;
+
+                @include bp(sm) {
+                    padding: 25px;
+                    padding-top: 50px;
+                }
+
+                .label-active {
+                    margin-bottom: 25px;
+                    @include bp(sm) {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            
+            .popup-confirm-actions {
+                //text-align: center;
+                padding-bottom: 50px;
+                button {
+                    width:250px;
+                    margin-top:5px;
+                    &:first-child {
+                        margin-right: 10px;
+                    }
+                }
+                @include bp(sm) {
+                    padding-bottom: 25px;
+                }
+
+                @include bp(xs) {
+                    button {
+                        &:first-child {                         
+                            margin-right: 0px;
+                            margin-bottom: 10px;
+                        }
+                        &:nth-child(2){
+                            padding: 0 45px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

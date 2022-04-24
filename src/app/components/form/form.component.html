@@ -1,0 +1,78 @@
+<div class="modal">
+  <div class="header">
+      <button class="close" (click)="close()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 23.728 23.206">
+              <path class="a" d="M130.728,109.32,128.355,107l-9.491,9.282L109.373,107,107,109.32l9.491,9.282L107,127.885l2.373,2.32,9.491-9.282,9.491,9.282,2.373-2.32-9.491-9.282Z" transform="translate(-107 -107)"/>
+          </svg>
+      </button>
+  </div>
+    
+    <div class="content  scroll-ready">
+        <div *ngIf="!isAdd" style="text-align: center;">
+            <h1 style="font-family: 'Reenie Beanie'; font-size: 2.5rem; font-weight: bold;">MY Notes</h1>
+            <button style="background-color: transparent; float:right; margin-top:-2.5em;" (click)="delete()">
+                <svg width="55" height="55" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M19 24h-14c-1.104 0-2-.896-2-2v-16h18v16c0 1.104-.896 2-2 2m3-19h-20v-2h6v-1.5c0-.827.673-1.5 1.5-1.5h5c.825 0 1.5.671 1.5 1.5v1.5h6v2zm-12-2h4v-1h-4v1z"/>
+                </svg>
+              </button>   
+        </div>    
+        
+        <div class="form" >
+          
+          <label class="label-small">TITLE</label>
+          <input tabindex="1" type="text" [formControl]="getControl('add.title')"  class="form-control">
+          <ng-container *ngFor="let validation of validationMessages.title">
+              <div class="error-message" [hidden]="!(isTouched('add.title') && hasError('add.title', validation.type))">
+                  <span class="label-small error">* {{ validation.message }}</span>
+              </div>
+          </ng-container>
+        
+          <label class="label-small">DESCRIPTION</label>
+          <input tabindex="2" type="text" [formControl]="getControl('add.description')" class="form-control">
+          <ng-container *ngFor="let validation of validationMessages.description">
+            <div class="error-message" [hidden]="!(isTouched('add.description') && hasError('add.description', validation.type))">
+                <span class="label-small error">* {{ validation.message }}</span>
+            </div>
+          </ng-container>
+
+          <label class="label-small">CONTENT</label>
+          <textarea  #content cols="40" rows="5" [formControl]="getControl('add.content')" class="form-control"></textarea>  
+          <ng-container *ngFor="let validation of validationMessages.content">
+              <div class="error-message" [hidden]="!(isTouched('add.content') && hasError('add.content', validation.type))">
+                  <span class="label-small error">* {{ validation.message }}</span>
+              </div>
+          </ng-container>
+
+            <div class="attachments-container">
+            <div class="input attachment-container" (click)="onPressUploadImage($event);$event.stopPropagation();">
+              <input
+                  tabindex="9"
+                  style="display: none"
+                  type="file"
+                  accept="image/*"
+                  #img
+                  (change) = "uploadImage($event, i)"
+              >
+              <img class="cover-photo"  [src]="validators.value.add.Attachments.base64" alt="" [class.hide]="!validators.value.add.Attachments.base64" >
+
+              <div class="icon-container" [hidden]="validators.value.add.Attachments.base64">
+                  <svg id="ios-image" xmlns="http://www.w3.org/2000/svg" width="36.864" height="35.719" viewBox="0 0 36.864 35.719">
+                      <path id="Path_1230" data-name="Path 1230" d="M107.482,129.245h16.9a.477.477,0,0,0,.4-.756l-8.454-13.171a.5.5,0,0,0-.806,0l-8.445,13.171A.481.481,0,0,0,107.482,129.245Zm17.2-4.98,3.1,4.783a.485.485,0,0,0,.4.206H132.9a.477.477,0,0,0,.4-.756l-5.459-7.53a.5.5,0,0,0-.806,0l-2.357,2.756A.482.482,0,0,0,124.682,124.265Zm3.935-7.419a2.406,2.406,0,1,0-2.721-2.636A2.452,2.452,0,0,0,128.617,116.847Z" transform="translate(-101.757 -106.552)"/>
+                      <path id="Path_1231" data-name="Path 1231" d="M82.029,48H50.836A2.79,2.79,0,0,0,48,50.748V80.971a2.79,2.79,0,0,0,2.836,2.748H82.029a2.79,2.79,0,0,0,2.836-2.748V50.748A2.79,2.79,0,0,0,82.029,48Zm-.239,24.041a.7.7,0,0,1-.709.687h-29.3a.7.7,0,0,1-.709-.687V51.666a.7.7,0,0,1,.709-.687H81.089a.7.7,0,0,1,.709.687V72.041Z" transform="translate(-48 -48)"/>
+                  </svg>
+              </div>
+              <span [hidden]="validators.value.add.Attachments.base64">Choose Image</span>
+          </div>
+          <ng-container *ngFor="let validation of validationMessages.base64">
+              <div class="error-message" [hidden]="!(isTouched('add.Attachments.base64') && hasError('add.Attachments.base64', validation.type))">
+                  <span class="label-small error">* {{ validation.message }}</span>
+              </div>
+          </ng-container>
+        </div>
+          <br>
+
+          <button type="button" class="btn btn-primary" (click)="add()" *ngIf="isAdd">ADD</button>
+          <button type="button" class="btn btn-primary" (click)="update()" *ngIf="!isAdd">UPDATE</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+@mixin bp($point) {
+
+    $xxl: "(max-width : 1800px)";
+    $xl: "(max-width : 1440px)";
+    $lg: "(max-width : 1200px)";
+    $md: "(max-width : 992px)";
+    $sm: "(max-width : 768px)";
+    $xs: "(max-width : 480px)";
+
+    @if $point == xxl {
+        @media #{$xxl} { @content; }
+    }
+    @if $point == xl {
+        @media #{$xl} { @content; }
+    }
+    @if $point == lg {
+        @media #{$lg} { @content; }
+    }
+    @else if $point == md {
+        @media #{$md} { @content; }
+    }
+    @else if $point == sm {
+        @media #{$sm}  { @content; }
+    }
+    @else if $point == xs {
+        @media #{$xs}  { @content; }
+    }
+}
+
+

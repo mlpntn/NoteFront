@@ -1,0 +1,23 @@
+
+<div class="container">
+    <div class="row" style="font-family:'Century Gothic'; margin-top:2em;text-align: center;">
+      <h1>MY Notes</h1>
+      <hr>
+    </div>
+    <div class="container">
+      <ul>
+          <li style="text-align: center;" (click)="new()">          
+            <h2 style="font-family:'Century Gothic';">Add New</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+              <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/>
+            </svg>
+          </li> 
+          <li *ngFor="let item of notes"  (click)="view(item)">          
+              <h2>{{item.title}}</h2>
+              <p>{{item.description}}</p>
+                        
+          </li> 
+      </ul>
+    </div>
+</div>
+

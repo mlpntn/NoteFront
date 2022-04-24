@@ -1,0 +1,160 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+@import 'bootstrap';
+
+
+/** Ionic CSS Variables **/
+:root {
+  /** primary **/
+  --ion-color-primary: #272727;
+  --ion-color-primary-rgb: 39, 39, 39;
+  --ion-color-primary-contrast: #D9AE58;
+  --ion-color-primary-contrast-rgb: 217, 174, 88;
+  --ion-color-primary-shade: #000000;
+  --ion-color-primary-tint: #B7B7B7;
+
+  /** secondary **/
+  --ion-color-secondary: #D9AE58;
+  --ion-color-secondary-rgb: 217, 174, 88;
+  --ion-color-secondary-contrast: #272727;
+  --ion-color-secondary-contrast-rgb: 39, 39, 39;
+  --ion-color-secondary-shade: #BB8847;
+  --ion-color-secondary-tint: #F7D369;
+
+  --fopm-white: #FFFFFF;
+  --fopm-gold: #D9AE58;
+  --fopm-danger: #DE5F5F;
+
+  --fopm-gray: #DBDBDB;
+  --fopm-gray-50: rgba(219, 219, 219, 0.5);
+
+  //camille color naming convention
+  --bronze: #BB8847;
+  --bronze-gold: #D9AE58;
+  --light-gold: #F7D369;
+
+  --black: #000000;
+  --black-25: rgba(0, 0, 0, 0.25);
+  --black-30: rgba(0, 0, 0, 0.30);
+  --primary-black: #272727;
+  --primary-black-75: rgba(39, 39, 39, 0.75);
+  --primary-black-30: rgba(39, 39, 39, 0.30);
+  --primary-black-55: rgba(39, 39, 39, 0.55);
+  --gray: #B7B7B7;
+  --light-gray: #DBDBDB;
+  --light-gray-25: rgb(219, 219, 219, 0.25);
+  --light-gray-50: rgb(219, 219, 219, 0.50);
+  --light-gray-75: rgb(219, 219, 219, 0.75);
+  --smoke: #E5E5E5;
+  --smoke-white: #F5F5F5;
+  --white: #ffffff;
+  --white-3: rgba(255, 255, 255, 0.03);
+  --white-25: rgba(255, 255, 255, 0.25);
+  --white-50: rgba(255, 255, 255, 0.5);
+  --white-75: rgba(255, 255, 255, 0.75);
+  --white-90: rgba(255, 255, 255, 0.9);
+
+  --red: #DE5F5F;
+  --green: #6C9852;
+  --yellow: #F7D369;
+
+  --gold-gradient: linear-gradient(to right, var(--bronze) 0%, var(--light-gold) 100%);
+  --black-gradient: linear-gradient(to right, var(--primary-black) 0%, var(--gray) 100%);
+  --white-gradient: linear-gradient(90deg, var(--white) 0%, var(--white-90) 50%, transparent 100%);
+
+  --black-gradient-to-top: linear-gradient(to top, var(--primary-black) 0%, transparent 100%);
+
+  --black-30-shadow: 0 3px 6px var(--black-30);
+  --black-15-shadow: 0 3px 6px var(--black-15);
+
+  // /** tertiary **/
+  // --ion-color-tertiary: #7044ff;
+  // --ion-color-tertiary-rgb: 112, 68, 255;
+  // --ion-color-tertiary-contrast: #ffffff;
+  // --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  // --ion-color-tertiary-shade: #633ce0;
+  // --ion-color-tertiary-tint: #7e57ff;
+
+  // /** success **/
+  // --ion-color-success: #10dc60;
+  // --ion-color-success-rgb: 16, 220, 96;
+  // --ion-color-success-contrast: #ffffff;
+  // --ion-color-success-contrast-rgb: 255, 255, 255;
+  // --ion-color-success-shade: #0ec254;
+  // --ion-color-success-tint: #28e070;
+
+  // /** warning **/
+  // --ion-color-warning: #ffce00;
+  // --ion-color-warning-rgb: 255, 206, 0;
+  // --ion-color-warning-contrast: #ffffff;
+  // --ion-color-warning-contrast-rgb: 255, 255, 255;
+  // --ion-color-warning-shade: #e0b500;
+  // --ion-color-warning-tint: #ffd31a;
+
+  // /** danger **/
+  // --ion-color-danger: #f04141;
+  // --ion-color-danger-rgb: 245, 61, 61;
+  // --ion-color-danger-contrast: #ffffff;
+  // --ion-color-danger-contrast-rgb: 255, 255, 255;
+  // --ion-color-danger-shade: #d33939;
+  // --ion-color-danger-tint: #f25454;
+
+  // /** dark **/
+  // --ion-color-dark: #222428;
+  // --ion-color-dark-rgb: 34, 34, 34;
+  // --ion-color-dark-contrast: #ffffff;
+  // --ion-color-dark-contrast-rgb: 255, 255, 255;
+  // --ion-color-dark-shade: #1e2023;
+  // --ion-color-dark-tint: #383a3e;
+
+  // /** medium **/
+  // --ion-color-medium: #989aa2;
+  // --ion-color-medium-rgb: 152, 154, 162;
+  // --ion-color-medium-contrast: #ffffff;
+  // --ion-color-medium-contrast-rgb: 255, 255, 255;
+  // --ion-color-medium-shade: #86888f;
+  // --ion-color-medium-tint: #a2a4ab;
+
+  // /** light **/
+  // --ion-color-light: #f4f5f8;
+  // --ion-color-light-rgb: 244, 244, 244;
+  // --ion-color-light-contrast: #000000;
+  // --ion-color-light-contrast-rgb: 0, 0, 0;
+  // --ion-color-light-shade: #d7d8da;
+  // --ion-color-light-tint: #f5f6f9;
+}
+/* 
+app-split-pane > .split-pane > .content > 
+
+app-split-pane > .split-pane > .content > ion-toolbar {
+  --background: transparent;
+} */    
+
+app-pages ion-content {
+  --background: transparent;
+}
+/* for default page creation ion-toolbar */
+app-pages ion-toolbar {
+  --background: transparent;
+}
+
+ion-checkbox {
+  --border-color: var(--primary-black);
+  --border-width: 2px;
+  --size: 18px;
+  min-width: var(--size);
+  min-height: var(--size);
+  
+  &.no-check {
+    --checkmark-color: transparent;
+  }
+}
+
+ion-menu {
+  --background: var(--primary-black);
+}
+
+ion-content {
+  --overflow: hidden;
+}
